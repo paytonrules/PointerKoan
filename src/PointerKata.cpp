@@ -11,10 +11,8 @@
 #include <assert.h>
 using namespace std;
 
-int main() {
-	cout << "This is the C++ pointer kata." << endl; // prints !!!Hello World!!!
-	cout << "Meant to practice pointer arithmetic" << endl;
-	cout << "It simply uses assert on a known data structure, and you fill in the rest" << endl;
+unsigned char *setupBuffer()
+{
 	const int BUFFER_SIZE = 255;
 
 	// Start with operations on an unsigned char - where a char is 1 byte
@@ -23,6 +21,14 @@ int main() {
 	{
 		originalPointer[i] = i;
 	}
+
+}
+
+int main() {
+	cout << "This is the C++ pointer kata." << endl; // prints !!!Hello World!!!
+	cout << "Meant to practice pointer arithmetic" << endl;
+	cout << "It simply uses assert on a known data structure, and you fill in the rest" << endl;
+	unsigned char *originalPointer = setupBuffer();
 	unsigned char *p = originalPointer;
 
 	assert(p[0] == 0);
