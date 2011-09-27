@@ -16,12 +16,13 @@ unsigned char *setupBuffer()
 	const int BUFFER_SIZE = 255;
 
 	// Start with operations on an unsigned char - where a char is 1 byte
-	unsigned char *originalPointer = new unsigned char[BUFFER_SIZE];
+	unsigned char *p = new unsigned char[BUFFER_SIZE];
 	for(int i = 0; i < BUFFER_SIZE; i++)
 	{
-		originalPointer[i] = i;
+		p[i] = i;
 	}
 
+	return p;
 }
 
 int main() {
@@ -81,5 +82,6 @@ int main() {
 	// Obscure C trick
 	//assert(*(4[intP]) == 0x1211100F);
 
+	cout << "Congrats you did it!  You must know your pointers" << endl;
 	return 0;
 }
