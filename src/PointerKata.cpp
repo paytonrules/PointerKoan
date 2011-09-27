@@ -36,48 +36,48 @@ int main() {
 	assert(*p == 0);
 
 	p = p + 3;
-	assert(*p == 3);
+	assert(*p == 0);
 
 	unsigned char a = *p++;
-	assert(a == 3);
-	assert(*p == 4);
+	assert(a == 0);
+	assert(*p == 0);
 
 	unsigned char b = *(p++);
-	assert(b == 4);
-	assert(*p == 5);
+	assert(b == 0);
+	assert(*p == 0);
 
 	// Would love to deal with the 'endianness' of the memory.
 	// Not sure I can
 	unsigned char c = *++p;
-	assert(c == 6);
-	assert(*p == 6);
+	assert(c == 0);
+	assert(*p == 0);
 
 	// Sure you can - cast and display the hex value
 	// but how would you simulate the memory?
 	unsigned char *np = p + 3;
-	assert(*np == 9);
-	assert(*p == 6);
+	assert(*np == 0);
+	assert(*p == 0);
 
 	//Let's setup an int pointer
 	unsigned int *intP = (unsigned int*) originalPointer;
 
 	// Hint remember your processors Endianness
 	// Also you should probably do these as hex
-	assert(*intP == 0x03020100);
+	assert(*intP == 0x00000000);
 
 	intP = intP + 3;
-	assert(*intP == 0x0F0E0D0C);
+	assert(*intP == 0x00000000);
 
 	intP = (unsigned int *)((unsigned char *) (intP) + 3);
-	assert(*intP == 0x1211100F);
+	assert(*intP == 0x00000000);
 
 	unsigned int intX = *intP--;
-	assert(intX == 0x1211100F);
-	assert(*intP == 0x0E0D0C0B);
+	assert(intX == 0x00000000);
+	assert(*intP == 0x00000000);
 
 	unsigned int *subtractedP = intP - 1;
-	assert(*subtractedP == 0x0A090807);
-	assert(intP - subtractedP == 1);
+	assert(*subtractedP == 0x00000000);
+	assert(intP - subtractedP == 0);
 
 	// Obscure C trick
 	//assert(*(4[intP]) == 0x1211100F);
