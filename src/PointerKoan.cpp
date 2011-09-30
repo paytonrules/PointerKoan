@@ -26,7 +26,7 @@ unsigned char *setupBuffer()
 }
 
 int main() {
-	cout << "This is the C++ pointer kata." << endl; // prints !!!Hello World!!!
+	cout << "This is the C++ pointer koan." << endl; // prints !!!Hello World!!!
 	cout << "Meant to practice pointer arithmetic" << endl;
 	cout << "It simply uses assert on a known data structure, and you fill in the rest" << endl;
 	unsigned char *originalPointer = setupBuffer();
@@ -58,7 +58,7 @@ int main() {
 	assert(*np == 0);
 	assert(*p == 0);
 
-	//Let's setup an int pointer
+	//Let's setup an integer pointer
 	unsigned int *intP = (unsigned int*) originalPointer;
 
 	// Hint remember your processors Endianness
