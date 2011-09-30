@@ -1,1 +1,7 @@
 Debug
+*.cmake
+PointerKoan
+Makefile
+CMakeFiles
+CMakeCache.txt
+.project
