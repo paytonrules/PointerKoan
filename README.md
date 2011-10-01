@@ -22,4 +22,4 @@ Once you've run the cmake command you can just run make like it's a traditional 
 The make command produces an executable called PointerKoan, which will run the program and tell you where the first failed assertion is.  Make this program run to completion, and you've done a pretty good job of learning pointer arithmetic.
 
 This code is released under the MIT license 
-Copywrite Eric Smith 2011
+Copyright Eric Smith 2011
