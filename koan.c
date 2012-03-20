@@ -1,23 +1,15 @@
-//============================================================================
-// Name        : PointerKata.cpp
-// Author      : Eric Smith
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
-#include <iostream>
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
-using namespace std;
 
 unsigned char *setupBuffer()
 {
 	const int BUFFER_SIZE = 255;
 
 	// Start with operations on an unsigned char - where a char is 1 byte
-	unsigned char *p = new unsigned char[BUFFER_SIZE];
-	for(int i = 0; i < BUFFER_SIZE; i++)
+	unsigned char *p = malloc(sizeof(unsigned char[BUFFER_SIZE]));
+  int i;
+	for(i = 0; i < BUFFER_SIZE; i++)
 	{
 		p[i] = i;
 	}
@@ -26,9 +18,10 @@ unsigned char *setupBuffer()
 }
 
 int main() {
-	cout << "This is the C++ pointer koan." << endl; // prints !!!Hello World!!!
-	cout << "Meant to practice pointer arithmetic" << endl;
-	cout << "It simply uses assert on a known data structure, and you fill in the rest" << endl;
+	puts("This is the C++ pointer koan.");
+	puts("Meant to practice pointer arithmetic");
+	puts("It simply uses assert on a known data structure, and you fill in the rest");
+
 	unsigned char *originalPointer = setupBuffer();
 	unsigned char *p = originalPointer;
 
@@ -82,6 +75,6 @@ int main() {
 	// Obscure C trick
 	//assert(*(4[intP]) == 0x1211100F);
 
-	cout << "Congrats you did it!  You must know your pointers" << endl;
+	puts("Congrats you did it!  You must know your pointers");
 	return 0;
 }
