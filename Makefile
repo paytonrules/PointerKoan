@@ -1,3 +1,5 @@
+CFLAGS += -std=c99
+
 test: testrunner
 	@./testrunner
 
