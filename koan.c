@@ -1,35 +1,17 @@
-//============================================================================
-// Name        : PointerKata.cpp
-// Author      : Eric Smith
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
-#include <iostream>
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
-using namespace std;
-
-unsigned char *setupBuffer()
-{
-	const int BUFFER_SIZE = 255;
-
-	// Start with operations on an unsigned char - where a char is 1 byte
-	unsigned char *p = new unsigned char[BUFFER_SIZE];
-	for(int i = 0; i < BUFFER_SIZE; i++)
-	{
-		p[i] = i;
-	}
-
-	return p;
-}
 
 int main() {
-	cout << "This is the C++ pointer koan." << endl; // prints !!!Hello World!!!
-	cout << "Meant to practice pointer arithmetic" << endl;
-	cout << "It simply uses assert on a known data structure, and you fill in the rest" << endl;
-	unsigned char *originalPointer = setupBuffer();
+	puts("This is the C++ pointer koan.");
+	puts("Meant to practice pointer arithmetic");
+	puts("It simply uses assert on a known data structure, and you fill in the rest");
+
+	// Start with operations on an unsigned char - where a char is 1 byte
+	unsigned char originalPointer[256];
+	for(int i = 0; i < 256; i++)
+		originalPointer[i] = i;
+
 	unsigned char *p = originalPointer;
 
 	assert(p[0] == 0);
@@ -80,8 +62,9 @@ int main() {
 	assert(intP - subtractedP == 0);
 
 	// Obscure C trick
-	//assert(*(4[intP]) == 0x1211100F);
+	intP = originalPointer;
+	assert(3[intP] == 0x00000000);
 
-	cout << "Congrats you did it!  You must know your pointers" << endl;
+	puts("Congrats you did it!  You must know your pointers");
 	return 0;
 }
