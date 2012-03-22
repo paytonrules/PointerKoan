@@ -1,7 +1,2 @@
-Debug
-*.cmake
-PointerKoan
-Makefile
-CMakeFiles
-CMakeCache.txt
-.project
+/testrunner
+/koan.o
