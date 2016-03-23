@@ -62,7 +62,7 @@ int main() {
 	assert(intP - subtractedP == 0);
 
 	// Obscure C trick
-	intP = originalPointer;
+	intP = (unsigned int*) originalPointer;
 	assert(3[intP] == 0x00000000);
 
 	puts("Congrats you did it!  You must know your pointers");
