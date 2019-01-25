@@ -10,7 +10,9 @@ This is a few tests to brush up on your pointer arithmetic. The memory block is 
 
 This will run the program and tell you where the first failed assertion is.  Make this program run to completion, and you've done a pretty good job of learning pointer arithmetic.
 
-This code is released under the MIT license
-Copyright Eric Smith 2011
+# Contributors
 
-(@sdegutis updated the koans to get rid of the dependency on C++ and on CMake. @sdegutis accepts checks or cash.)
+Hat tip to @sdegutis for updating the koans to get rid of the dependency on C++ and on CMake. @sdegutis accepts checks or cash.
+
+This code is released under the MIT license
+Copyright Eric Smith 2019
